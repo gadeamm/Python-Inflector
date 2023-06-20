@@ -90,7 +90,7 @@ class Spanish (Base):
                 replacement = rule[1]
                 if re.match(u'\|', replacement):
                     for k in range(1, len(groups)):
-                        replacement = replacement.replace(u'|' + unicode(
+                        replacement = replacement.replace(u'|' + str(
                             k), self.string_replace(groups[k - 1], u'ÁÉÍÓÚáéíóú', u'AEIOUaeiou'))
 
                 result = re.sub(rule[0], replacement, word)
@@ -151,7 +151,7 @@ class Spanish (Base):
                 replacement = rule[1]
                 if re.match(u'~', replacement):
                     for k in range(1, len(groups)):
-                        replacement = replacement.replace(u'~' + unicode(
+                        replacement = replacement.replace(u'~' + str(
                             k), self.string_replace(groups[k - 1], u'AEIOUaeiou', u'ÁÉÍÓÚáéíóú'))
 
                 result = re.sub(rule[0], replacement, word)
